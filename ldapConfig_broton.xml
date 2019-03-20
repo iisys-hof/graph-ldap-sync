@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ldap_config>
-  <url>ldap://192.168.91.131:389/</url>
-  <user>cn=Manager,dc=uniquity,dc=me</user>
-  <password>Xzi90gWLUe4p3bQQkmLknKmB8ghA8y</password>
-  <context>ou=Users,domainName=uniquity.me,o=domains,dc=uniquity,dc=me</context>
+  <url>ldap://10.90.41.165:389/</url>
+  <user>cn=admin,dc=broton,dc=org</user>
+  <password>Ilymtyly2017</password>
+  <context>ou=users,ou=accounts,dc=broton,dc=org</context>
   <interval>DAILY</interval>
   <read_only>true</read_only>
   <subtree_search>true</subtree_search>
@@ -13,7 +13,7 @@
     <class>inetOrgPerson</class>
   </object_classes>
   <org_units>
-    <unit>ou=Users,domainName=uniquity.me,o=domains,dc=uniquity,dc=me</unit>
+    <unit>ou=users,dc=broton,dc=org</unit>
   </org_units>
 
 
@@ -32,7 +32,7 @@
     </properties>
     <mapping>
       <rule>
-        <ldap_property>mail</ldap_property>
+        <ldap_property>uid</ldap_property>
         <end_point_property>id</end_point_property>
         <direction>FROM_LDAP</direction>
         <operation>COPY</operation>
@@ -123,7 +123,7 @@
       </rule>
 
       <rule>
-        <ldap_property>mail</ldap_property>
+        <ldap_property>uid</ldap_property>
         <end_point_property>id</end_point_property>
         <direction>BOTH</direction>
         <operation>COPY_ON_CREATE</operation>
@@ -156,5 +156,18 @@
   </endpoint>
   <!--test end point printing LDAP user info-->
 
+  <endpoint>
+    <type>test</type>
+    <create_own_entries>false</create_own_entries>
+    <delete_own_entries>false</delete_own_entries>
+    <create_ldap_entries>false</create_ldap_entries>
+    <delete_ldap_entries>false</delete_ldap_entries>
+    <properties>
+
+    </properties>
+    <rules>
+
+    </rules>
+  </endpoint>
 
 </ldap_config>

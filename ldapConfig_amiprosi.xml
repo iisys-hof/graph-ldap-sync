@@ -32,7 +32,7 @@
     </properties>
     <mapping>
       <rule>
-        <ldap_property>mail</ldap_property>
+        <ldap_property>uid</ldap_property>
         <end_point_property>id</end_point_property>
         <direction>FROM_LDAP</direction>
         <operation>COPY</operation>
@@ -123,7 +123,7 @@
       </rule>
 
       <rule>
-        <ldap_property>mail</ldap_property>
+        <ldap_property>uid</ldap_property>
         <end_point_property>id</end_point_property>
         <direction>BOTH</direction>
         <operation>COPY_ON_CREATE</operation>
@@ -156,5 +156,18 @@
   </endpoint>
   <!--test end point printing LDAP user info-->
 
+  <endpoint>
+    <type>test</type>
+    <create_own_entries>false</create_own_entries>
+    <delete_own_entries>false</delete_own_entries>
+    <create_ldap_entries>false</create_ldap_entries>
+    <delete_ldap_entries>false</delete_ldap_entries>
+    <properties>
+
+    </properties>
+    <rules>
+
+    </rules>
+  </endpoint>
 
 </ldap_config>
